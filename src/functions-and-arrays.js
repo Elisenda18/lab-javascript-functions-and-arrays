@@ -1,16 +1,18 @@
 // Iteration #1: Find the maximum
-function maxOfTwoNumbers(number1,number2){
-  if(number1 > number2) {
-    return number1;
-  } else {
-    return number2;
-  }
-}
+function maxOfTwoNumbers(num1, num2) {
+  if (num1 > num2) return num1;
+  else return num2;
+};
+
+
+
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
 function findLongestWord(arr){
   let longestWord = "";
+  if (!arr.length) return null;
+  if (arr.length === 1) return arr[0];
   for (let word of words){
     if (word.length > longestWord.length) {
       longestWord = word;
@@ -20,6 +22,7 @@ function findLongestWord(arr){
 }
 
  findLongestWord(words);
+
 
 // Iteration #3: Calculate the sum
 
@@ -35,17 +38,40 @@ function sumNumbers(a){
 
 sumNumbers(numbers);
 
+// BONUS 3.1 
+
+function sum(arr) {
+  if (!arr.length) return 0;
+
+  sumTotal = 0;
+
+  for(let value of arr) {
+    sumTotal += value;
+  }
+  return sumTotal;
+}
+
+
 // Iteration #4: Calculate the average
 
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-// Reutilzamos la función de la iteración anterior para calcular el average. No hemos sabido usar una función para calcular el average
-let sumTotal = sumNumbers(numbers);
-let arrayLength = numbers.length
+function sumNumbers(arr) {
+  sumTotal = 0;
 
-let averageTotal = sumTotal / arrayLength;
-console.log(averageTotal);
+  for (let number of arr) {
+    sumTotal += number;
+  }
+  return sumTotal;
+}
+
+function averageNumbers(arr) {
+  if(!arr.length) return null;
+  if (arr.length === 1) return arr[0];
+  return sumNumbers(arr) / arr.length;
+} 
+
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
@@ -162,3 +188,4 @@ const matrix = [
   [20, 73, 35, 29, 78, 31, 90, 1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 5, 54],
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
+*/
